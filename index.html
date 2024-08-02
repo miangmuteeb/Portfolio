@@ -3,275 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muteeb's Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Font Awesome -->
+    <title> Muteeb's Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="styles/pics/good image.jpg">
+    <style>
+       html, body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--Seo Meta Tags-->
-    <meta name="description" content="Muteeb Ramzan's portfolio showcasing skills in HTML, CSS, JavaScript, Bootstrap, and React.js, with projects and contact information.">
-    <meta name="keywords" content="Muteeb Ramzan, portfolio, web development, HTML, CSS, JavaScript, Bootstrap, React.js">
-    <meta name="author" content="Muteeb Ramzan">
-    <meta name="robots" content="index, follow">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar {
+            transition: background-color 0.3s, padding 0.3s;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar img {
+            height: 50px;
+            margin-right: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #cccccc;
+        }
+
+        .navbar-nav-center {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .navbar-nav-center .nav-link {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .hero-section {
+            padding: 50px 0;
+        }
+        .hero-image {
+            max-width: 80%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .hero-image:hover {
+            transform: scale(1.1);
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .btn-primary {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            animation: fadeIn 4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .hero-image:hover {
+            transform: scale(1.05);
+            box-shadow: 15px 15px 10px rgba(73, 72, 72, 0.75);
+        }
+
+        .hero-title, h2, h3 {
+            background: -webkit-linear-gradient(#ffffff, #6d6d6d33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-me {
+            color: #ffffff;
+        }
+
+        .card {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header {
+            background-color: #444;
+        }
+
+        .progress-bar {
+            background-color: #17a2b8;
+        }
+
+        .light-theme {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Georgia', serif;
+        }
+
+        .light-theme .navbar {
+            background-color: #ffffff;
+        }
+
+        .light-theme .navbar-dark .navbar-nav .nav-link {
+            color: #000000;
+        }
+
+        .light-theme .navbar-dark .navbar-nav .nav-link:hover {
+            color: #adacac;
+        }
+
+        .light-theme .hero-title,
+        .light-theme h2,
+        .light-theme h3 {
+            background: -webkit-linear-gradient(#000000, #575555);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .light-theme .about-me {
+            color: #333;
+        }
+
+        .light-theme .card {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .light-theme  {
+            background-color: #ffffff;
+        }
+
+        .progress {
+            height: 30px;
+        }
+
+        .theme-dropdown {
+            margin-left: auto;
+        }
+
+        .dropdown-menu {
+            min-width: 120px;
+        }
+
+        .expertise-icon {
+            margin-top: 50px;
+            font-size: 5rem;
+            transition: transform 0.3s;
+        }
+
+        .expertise-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .carousel-item {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            border-radius: 100%;
+            height: 25px;
+            width: 25px;
+        }
+
+        .carousel-indicators li {
+            background-color: #ffffff;
+        }
+
+        .carousel-indicators .active {
+            background-color: #007bff;
+        }
+
+        .project-card {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card img {
+            border-radius: 10px 10px 0 0;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card .card-body {
+            padding: 20px;
+        }
+
+        .project-card .btn-view {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+        }
+
+        .project-card .btn-view:hover {
+            background-color: #0056b3;
+        }
+        .custom-radius {
+            width: 300px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 30% 70% 70% 30% / 33% 12% 88% 67%;}
+    </style>
 </head>
-<body class=" text-white" style="background-image: url(styles/istockphoto-680888484-170667a.webp); ">
-    <!-- Header Section -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-image: url(styles/istockphoto-680888484-170667a.webp);">
+<body class="dark-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#hero">Career Canvas</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#expertise">Expertise</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link " href="#last">Contact</a>
-              </li>
-            </ul>
-           
-          </div>
+            <img src="/styles/pics/Screenshot 2024-07-28 172415.png" alt="Logo">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav r mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#expertise">Expertise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav theme-dropdown">
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-dark dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Theme
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="themeDropdown">
+                            <a class="dropdown-item" href="#" id="dark-theme">Dark Theme</a>
+                            <a class="dropdown-item" href="#" id="light-theme">Light Theme</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
-    </header>
+    </nav>
 
-    <!-- About Section -->
-    <section class="about container py-5" id="hero">
+    <div class="container hero-section mt-4">
         <div class="row align-items-center">
-            <div class="col-lg-6 text-center">
-                <img src="styles/good image.jpg" alt="My Pic" class="img-fluid rounded-circle shadow mx-auto d-block image-animation" style="border: 8px white solid; width: 350px;">
+            <div class="col-12 col-md-6 text-center text-md-left">
+                <img src="styles/pics/technology-png-9191.png" alt="Your Picture" class="img-fluid hero-image mt-4">
             </div>
-            <div class="col-lg-6">
-                <div class="container mt-5">
-                    <h1 class="display-5 text-center mb-4 slide-in heading-text">
-                        <b>Muhammad Muteeb Ramzan</b>
-                    </h1>
-                </div>
-                <p class="lead text-center">
-                    Passionate about crafting responsive and dynamic web applications, leveraging modern technologies to create intuitive user experiences and robust solutions.
-                </p>
-                <a href="styles/Muhammad Muteeb Ramzan.pdf" target="_blank" download="Muhammad Muteeb Ramzan.pdf" class="btn btn-primary btn-download mt-3 d-block mx-auto">
-                    <i class="fa-solid fa-file-arrow-down fa-beat"></i> Download Resume
-                </a>
+            <div class="col-12 col-md-6 text-center mt-4">
+                <h1 class="hero-title good">Muhammad Muteeb Ramzan</h1>
+                <h3 class="hero-subtitle">Computer Science Student | Front-End Developer | WordPress Developer</h3>
+                <a href="styles/pics/Muhammad Muteeb Ramzan.pdf" class="btn btn-primary btn-lg mt-2" download>Download Resume</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="bg-dark py-5" style="background-image: url(styles/istockphoto-680888484-170667a.webp);">
-        <div class="container">
-            <h2 class="text-center py-3" style="font-weight: 900;">Expertise</h2>
+    <div class="container my-5" id="about">
+        <div class="row">
+            <div class="col-md-4 text-center text-md-left">
+                <img src="styles/pics/good image.jpg" alt="Your Picture" class="custom-radius"
+                ">
+            </div>
+            <div class="col-md-8">
+                <h2 class="good">About Me</h2>
+                <p class="about-me">I am Muhammad Muteeb Ramzan, a dedicated Computer Science student currently in my 2nd semester. I am gaining valuable experience in web and app development through my training center. My focus is on front-end development, and I specialize in creating dynamic, responsive websites using HTML, CSS, JavaScript, Bootstrap, and WordPress. Additionally, I have experience with React.js and version control using Git and GitHub. I also have a skill in video editing, which complements my web development expertise. My goal is to create engaging and visually appealing web experiences for users.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5"  id="expertise" >
+        <h2 class="">Expertise</h2>
+        <p class="">I am skilled in a variety of technologies essential for modern web development. My expertise includes HTML, CSS, JavaScript, Bootstrap, React, WordPress, Git, and GitHub. Each technology plays a crucial role in building engaging and efficient web applications. I continuously strive to enhance my skills and stay updated with the latest industry trends. <br>
+            Discover more about my professional journey on <a href="https://www.linkedin.com/in/muteebramzan/" target="_blank"><b>Linkedin</b></a>
+        </p>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <i class="fab fa-html5 expertise-icon text-danger"></i>
+                <h5 class="good mt-3">HTML</h5>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <i class="fab fa-css3-alt expertise-icon text-primary"></i>
+                <h5 class="good mt-3">CSS</h5>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <i class="fab fa-js-square expertise-icon text-warning"></i>
+                <h5 class="good mt-3">JavaScript</h5>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <i class="fab fa-bootstrap expertise-icon text-info"></i>
+                <h5 class="good mt-3">Bootstrap</h5>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center mt-lg-0 mt-md-3 mt-3">
+                <i class="fab fa-wordpress expertise-icon text-primary"></i>
+                <h5 class="good mt-3">WordPress</h5>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center mt-lg-0 mt-md-3 mt-3">
+                <i class="fab fa-react expertise-icon text-info"></i>
+                <h5 class="good mt-3">React</h5>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center mt-lg-0 mt-md-3 mt-3">
+                <i class="fab fa-git-alt expertise-icon text-danger"></i>
+                <h5 class="good mt-3">Git</h5>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center mt-lg-0 mt-md-3 mt-3">
+                <i class="fab fa-github expertise-icon text-dark"></i>
+                <h5 class="good mt-3">GitHub</h5>
+            </div>
+        </div>
+        
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Skill: HTML -->
-                <div class="col">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <i class="fa-brands fa-html5 fa-spin" style="width: 300px;"></i> <h5 class="card-title">HTML</h5>
-                            I possess strong HTML skills, which enable me to create the fundamental structure and content of web pages. With expertise in HTML, I can proficiently use tags and elements to organize information effectively.
-                            <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                            </div>
+    <div class="container my-5"id="projects">
+        <h2 class="good text-center mb-4">Projects</h2>
+        <div id="projectsCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#projectsCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#projectsCarousel" data-slide-to="1"></li>
+                <li data-target="#projectsCarousel" data-slide-to="2"></li>
+                <li data-target="#projectsCarousel" data-slide-to="3"></li>
+                <li data-target="#projectsCarousel" data-slide-to="4"></li>
+                <li data-target="#projectsCarousel" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card project-card">
+                        <img src="styles/pics/1.png" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Fitness Website</h5>
+                            <p class="card-text">Developed a comprehensive fitness website using HTML, CSS, Bootstrap, and JavaScript. This project leverages responsive design and interactive elements to deliver an engaging user experience, with version control managed through Git for streamlined development and collaboration.</p>
+                            <a href="https://fitness-hub.surge.sh/" target="_blank" class="btn btn-view">View Project</a>
                         </div>
                     </div>
                 </div>
-                <!-- Skill: CSS -->
-                <div class="col">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <i class="fa-brands fa-css3-alt fa-spin"></i> <h5 class="card-title">CSS</h5>
-                            I possess strong CSS skills, enabling me to style and design web pages with precision and creativity. Proficient in CSS, I leverage selectors, properties, and values to achieve responsive layouts and aesthetic enhancements.
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-                            </div>
+                <div class="carousel-item">
+                    <div class="card project-card">
+                        <img src="styles/pics/2.png" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Food Lover</h5>
+                            <p class="card-text">Created a visually appealing website for food enthusiasts using HTML, CSS, Bootstrap, and JavaScript. The site features a dynamic and user-friendly interface, showcasing recipes and culinary tips with interactive elements and responsive design. Git was utilized for efficient version control throughout the development process.
+
+                            </p>
+                            <a href="https://food-lover278.surge.sh/" target="_blank" class="btn btn-view">View Project</a>
                         </div>
                     </div>
                 </div>
-                <!-- Skill: Bootstrap -->
-                <div class="col">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <i class="fa-brands fa-bootstrap fa-spin"></i> <h5 class="card-title">Bootstrap</h5>
-                            I possess strong Bootstrap skills, allowing me to rapidly prototype and develop responsive and mobile-first web projects. Proficient in Bootstrap, I utilize its grid system to create consistent layouts and user interfaces across different devices.
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                            </div>
+                <div class="carousel-item">
+                    <div class="card project-card">
+                        <img src="styles/pics/3.png" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Pure Islam</h5>
+                            <p class="card-text">Developed a serene and informative website focused on Islamic teachings and resources, utilizing HTML, CSS, Bootstrap, and JavaScript for a polished and responsive design. The project emphasizes ease of navigation and accessibility, with Git managing version control for streamlined updates and collaboration.</p>
+                            <a href="https://pure-islam.surge.sh/" target="_blank" class="btn btn-view">View Project</a>
                         </div>
                     </div>
                 </div>
-                <!-- Skill: GitHub -->
-                <div class="col">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <i class="fa-brands fa-github fa-spin"></i> <h5 class="card-title">GitHub</h5>
-                            I possess strong GitHub skills, utilizing it as a powerful version control system to manage and collaborate on code projects effectively. Proficient in GitHub, I leverage its features such as repositories, branches, and pull requests to streamline development workflows.
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-                            </div>
+                <div class="carousel-item">
+                    <div class="card project-card">
+                        <img src="styles/pics/4.png" class="card-img-top" alt="Project 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Invitation</h5>
+                            <p class="card-text">Crafted an elegant and personalized wedding invitation website using HTML, CSS, and Bootstrap. The design features a beautiful, responsive layout tailored to convey the joy and style of the occasion, with JavaScript enhancing interactive elements and Git ensuring smooth version control throughout the development process.
+
+                            </p>
+                            <a href="https://wedding-invitation.surge.sh/" target="_blank" class="btn btn-view">View Project</a>
                         </div>
                     </div>
                 </div>
-                <!-- Skill: JavaScript -->
-                <div class="col">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <i class="fa-brands fa-js fa-spin"></i> <h5 class="card-title">JavaScript</h5>
-                            I possess strong JavaScript skills, enabling me to create dynamic and interactive web applications. Proficient in JavaScript, I leverage its language constructs, functions, and libraries to implement client-side functionalities and enhance user experiences.
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
+                <div class="carousel-item">
+                    <div class="card project-card">
+                        <img src="styles/pics/5.png" class="card-img-top" alt="Project 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Br Architects</h5>
+                            <p class="card-text"> Created a visually engaging website for Br Architects, employing HTML, CSS, and Bootstrap to present architectural projects and services. The design emphasizes a modern and professional look, with interactive features powered by JavaScript. Git was used for version control, ensuring a streamlined development process.</p>
+                            <a href="https://br-architect-278.surge.sh/" target="_blank" class="btn btn-view">View Project</a>
                         </div>
                     </div>
                 </div>
-                <!-- Skill: React.js -->
-                <div class="col">
-                    <div class="card h-100 shadow">
-                        <div class="card-body text-center">
-                            <i class="fa-brands fa-react fa-spin"></i> <h5 class="card-title">React.js</h5>
-                            I am currently diving into React.js with a focus on mastering its component-based architecture and state management. My journey involves learning JSX syntax, understanding React's lifecycle methods, and exploring hooks like useState and useEffect to create dynamic and responsive user interfaces.
-                            <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                            </div>
+                <div class="carousel-item">
+                    <div class="card project-card">
+                        <img src="styles/pics/6.png" class="card-img-top" alt="Project 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Pic Planet</h5>
+                            <p class="card-text">Developed an engaging photo-sharing platform called Pic Planet using HTML, CSS, and Bootstrap. The website features a sleek, user-friendly interface for uploading and exploring images. JavaScript was utilized for dynamic content and interactivity, while Git managed version control throughout the development process.
+
+                            </p>
+                            <a href="https://picplanet.surge.sh/ " target="_blank" class="btn btn-view">View Project</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#projectsCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#projectsCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="bg-dark py-5"style="background-image: url(styles/istockphoto-680888484-170667a.webp);">
-        <div class="container">
-            <h2 class="text-center py-3" style="font-weight: 900;">My Projects</h2>
-
-            <div class="container mt-5">
+    </div>
+    <div class="container my-5">
+        <h2 class="good text-center mb-4">Certifications</h2>
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <img src="styles/pics/Screenshot 2024-07-26 200320.png" class="img-fluid rounded" alt="Certificate 1">
+                <h5 class="good mt-2">Communications & Soft Skills</h5>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <img src="styles/pics/Screenshot 2024-07-26 200434.png" class="img-fluid rounded" alt="Certificate 2">
+                <h5 class="good mt-2">Freelancing</h5>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <img src="styles/pics/Screenshot 2024-07-26 200656.png" class="img-fluid rounded" alt="Certificate 3">
+                <h5 class="good mt-2">Web Design</h5>
+            </div>
+        </div>
+        </div>
+        
+        <div class="container my-5"id="contact">
+        <h2 class=" text-center mb-4">Contact Me</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="name" class="good">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="good">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="good">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+            <div class="col-md-6 mt-2">
                 <div class="row">
-                    <!-- Project Cards -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="styles/pics/2 .png" class="card-img-top" alt="Project 1" style="height: 200px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Project 1</h5>
-                                <p class="card-text">My completed project showcases a dynamic web application leveraging HTML, CSS, and JavaScript to deliver a seamless user interface and enhanced functionality.</p>
-                                <a href="https://birthdaywishbymuteeb.surge.sh/" target="_blank" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="styles/pics/project2.png" class="card-img-top" alt="Project 2" style="height: 200px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Project 2</h5>
-                                <p class="card-text">Discover my latest project—a dynamic web application crafted with HTML, CSS, and JavaScript, prioritizing intuitive user interfaces and robust functionality. </p>
-                                <a href="http://br-architect-278.surge.sh/" target="_blank" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="styles/pics/Screenshot 2024-04-07 002628.png"  class="card-img-top" alt="Project 3" style="height: 200px;" >
-                            <div class="card-body">
-                                <h5 class="card-title">Project 3</h5>
-                                <p class="card-text">Explore my recent web project, integrating HTML, CSS, and JavaScript to create a responsive and interactive experience. Delve into its user-centric design</p>
-                                <a href="https://wedding-invitation.surge.sh/"  target="_blank" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="styles/pics/Screenshot 2024-06-27 004624.png" class="card-img-top" alt="Project 4">
-                            <div class="card-body">
-                                <h5 class="card-title">Project 4</h5>
-                                <p class="card-text">Experience my completed web application, powered by HTML, CSS, and JavaScript, designed to optimize usability and engagement.</p>
-                                <a href="https://food-lover278.surge.sh/" target="_blank" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="styles/pics/Screenshot 2024-06-27 005931.png" class="card-img-top" alt="Project 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Project 5</h5>
-                                <p class="card-text">Introducing my latest creation—a dynamic web solution combining HTML, CSS, and JavaScript to deliver a compelling user experience.</p>
-                                <a href="https://to-do278.surge.sh/" target="_blank" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="styles/pics/Screenshot 2024-06-27 005915.png" class="card-img-top" alt="Project 6">
-                            <div class="card-body">
-                                <h5 class="card-title">Project 6</h5>
-                                <p class="card-text">Includes a standout project—a versatile web application utilizing HTML, CSS, and JavaScript to achieve seamless interaction and visual appeal. </p>
-                                <a href="https://fitness-hub.surge.sh/" target="_blank" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-12">
+                        <h4 class="good">Contact Information</h4>
+                        <p class="good"><i class="fas fa-phone"></i> +923096829046</p>
+                        <p class="good"><i class="fas fa-envelope"></i> muteebramzan3@gmail.com</p>
+                        <p class="good"><i class="fas fa-map-marker-alt"></i> House#248,Faisalabad,Pakistan</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="last">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Contact Information</h2>
-                    <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> muteebramzan3@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i><strong> Phone:</strong> +923096829046</p>
-                   
-                </div>
-                <div class="col-lg-6">
-                    <h2>Contact Form</h2>
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <div class="form-group">
-                            <input type="hidden" name="access_key" value="eae55c93-d3d0-44c7-90b1-8dcf046b5996">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email address:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-2 w-100">Submit</button>
-                    </form>
-                </div>
-            </div>
+      
         </div>
-    </section>
+        <footer class="text-center p-2"> &copy; All Rights Reserved</footer>
 
-    <!-- Footer Section -->
-    <footer class="footer mt-auto py-1 bg-dark text-white text-center "  style="background-image: url(styles/istockphoto-680888484-170667a.webp); ">
-        <div class="container">
-            <span style="font-size: 1.2rem;">&copy; 2024 Muteeb Ramzan. All rights reserved.</span>
-            <ul class="list-inline mt-3">
-                <li class="list-inline-item"><a href="https://www.facebook.com/ladlamian.muteeb.1" class="text-white"><i class="fab fa-facebook-f fa-beat"></i></a></li>
-               
-                <li class="list-inline-item"><a href="https://www.linkedin.com/in/muteebramzan/" class="text-white"><i class="fab fa-linkedin fa-beat"></i></a></li>
-                <li class="list-inline-item fa-beat"><a href="https://github.com/miangmuteeb" class="text-white"><i class="fab fa-github"></i></a></li>
-            </ul>
-        </div>
-    </footer>
-    
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('dark-theme').addEventListener('click', function () {
+            document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme');
+        });
 
-    <!-- Bootstrap JS Bundle (Popper included) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+        document.getElementById('light-theme').addEventListener('click', function () {
+            document.body.classList.add('light-theme');
+            document.body.classList.remove('dark-theme');
+        });
+    </script>
 </body>
 </html>
